@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Martabak MM — Hangat dari Dapur ke Mejamu</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A5%9E%3C/text%3E%3C/svg%3E">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-md container py-2">
+    <a class="navbar-brand brand" data-scroll="top" role="button" tabindex="0">🥞 Martabak MM</a>
+    <div class="d-flex align-items-center gap-3 order-md-3">
+      <button class="cart-btn" id="openCart">🛒 Keranjang<span class="cart-badge" id="cartBadge">0</span></button>
+      <button class="navbar-toggler border-0 px-1" data-bs-toggle="collapse" data-bs-target="#mnav" aria-label="Menu"><span class="navbar-toggler-icon"></span></button>
+    </div>
+    <div class="collapse navbar-collapse" id="mnav">
+      <ul class="navbar-nav mx-auto gap-md-3">
+        <li class="nav-item"><a class="nav-link" data-scroll="menu" role="button" tabindex="0">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" data-scroll="kenapa" role="button" tabindex="0">Kenapa Kami</a></li>
+        <li class="nav-item"><a class="nav-link" data-scroll="lokasi" role="button" tabindex="0">Lokasi</a></li>
+        <li class="nav-item"><a class="nav-link" data-scroll="faq" role="button" tabindex="0">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link" data-scroll="kontak" role="button" tabindex="0">Kontak</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container position-relative">
+    <div class="row align-items-center g-4 g-lg-5">
+      <div class="col-lg-6 text-center text-lg-start">
+        <span class="badge rounded-pill hero-badge">🔥 Dipanggang setelah kamu pesan</span>
+        <h1 class="mt-3 mx-auto mx-lg-0">Martabak hangat, dari dapur ke mejamu</h1>
+        <p class="hero-desc mx-auto mx-lg-0">Dibuat setelah kamu pesan, bukan digoreng dari pagi. Pilih rasa dan ukuran sesuka hati, lalu tinggal tunggu jadi.</p>
+        <div class="hero-actions justify-content-center justify-content-lg-start">
+          <button class="btn btn-primary" id="heroCta">Lihat Menu</button>
+          <a data-scroll="kenapa" role="button" tabindex="0" class="btn btn-ghost">Kenapa Martabak MM?</a>
+        </div>
+      </div>
+      <div class="col-lg-6 order-first order-lg-last">
+        <div class="stage">
+          <div class="disc"></div>
+          <div id="heroCarousel" class="carousel slide carousel-fade hero-car" data-bs-ride="carousel" data-bs-interval="3200" data-bs-pause="false">
+            <div class="carousel-inner">
+              <div class="carousel-item active"><img id="heroPhoto" src="images/martabak-manis.png" class="float-img" alt="Martabak Manis"><span class="cap">Martabak Manis</span></div>
+              <div class="carousel-item"><img id="heroPhoto2" src="images/martabak-telor.png" class="float-img" alt="Martabak Telor"><span class="cap">Martabak Telor</span></div>
+              <div class="carousel-item"><img id="heroPhoto3" src="images/martabak-premium.png" class="float-img" alt="Martabak Premium"><span class="cap">Martabak Premium</span></div>
+            </div>
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-label="Manis"></button>
+              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Telor"></button>
+              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Premium"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon" aria-hidden="true"><div><span>Martabak Manis</span><span>✦</span><span>Martabak Telor</span><span>✦</span><span>Martabak Premium</span><span>✦</span><span>Dibuat Baru Setiap Pesanan</span><span>✦</span><span>Martabak Manis</span><span>✦</span><span>Martabak Telor</span><span>✦</span><span>Martabak Premium</span><span>✦</span><span>Dibuat Baru Setiap Pesanan</span><span>✦</span><span>Martabak Manis</span><span>✦</span><span>Martabak Telor</span><span>✦</span><span>Martabak Premium</span><span>✦</span><span>Dibuat Baru Setiap Pesanan</span><span>✦</span><span>Martabak Manis</span><span>✦</span><span>Martabak Telor</span><span>✦</span><span>Martabak Premium</span><span>✦</span><span>Dibuat Baru Setiap Pesanan</span><span>✦</span></div></div>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="sect-head">
+      <h2>Pilih Martabakmu</h2>
+      <p>Semua bisa disesuaikan — rasa, ukuran, sampai tambahan topping.</p>
+    </div>
+
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-cat="semua">Semua</button>
+      <button class="tab" data-cat="manis">Manis</button>
+      <button class="tab" data-cat="telor">Telor</button>
+      <button class="tab" data-cat="mini">Premium</button>
+    </div>
+
+    <div class="menu-list">
+
+      <!-- MARTABAK MANIS -->
+      <article class="product row g-4 align-items-center mx-0" data-cat="manis">
+        <div class="col-md-5 photo-frame pimg" style="min-height:210px;" aria-hidden="true">
+          <img class="float-img" id="manisPhoto" src="images/martabak-manis.png" alt="">
+        </div>
+        <div class="product-info col-md-7">
+          <h3>Martabak Manis</h3>
+          <p class="desc">Adonan tebal empuk dengan topping pilihanmu, dipanggang setelah kamu pesan.</p>
+
+          <span class="field-label">Ukuran</span>
+          <div class="opt-row" data-group="manis-ukuran">
+            <button class="opt selected" data-value="Setengah Loyang" data-price="20000">Setengah Loyang · Rp20.000</button>
+            <button class="opt" data-value="Satu Loyang" data-price="35000">Satu Loyang · Rp35.000</button>
+          </div>
+
+          <span class="field-label">Topping</span>
+          <div class="opt-row" data-group="manis-topping">
+            <button class="opt selected" data-value="Coklat" data-price="0">Coklat</button>
+            <button class="opt" data-value="Keju" data-price="5000">Keju (+Rp5.000)</button>
+            <button class="opt" data-value="Kacang" data-price="3000">Kacang (+Rp3.000)</button>
+            <button class="opt" data-value="Coklat Keju" data-price="7000">Coklat Keju (+Rp7.000)</button>
+            <button class="opt" data-value="Kacang Coklat" data-price="6000">Kacang Coklat (+Rp6.000)</button>
+          </div>
+
+          <span class="field-label">Tambahan (boleh lebih dari satu)</span>
+          <div class="opt-row" data-group="manis-extra" data-multi="true">
+            <button class="opt" data-value="Susu Kental Manis" data-price="3000">Susu Kental Manis (+Rp3.000)</button>
+            <button class="opt" data-value="Meises Extra" data-price="2000">Meises Extra (+Rp2.000)</button>
+            <button class="opt" data-value="Keju Extra" data-price="4000">Keju Extra (+Rp4.000)</button>
+            <button class="opt" data-value="Almond" data-price="6000">Almond (+Rp6.000)</button>
+          </div>
+
+          <div class="qty-row">
+            <span class="field-label" style="margin:0;">Jumlah</span>
+            <button class="qty-btn" data-qty-action="minus" data-target="manis">−</button>
+            <span class="qty-val" id="manis-qty">1</span>
+            <button class="qty-btn" data-qty-action="plus" data-target="manis">+</button>
+          </div>
+
+          <div class="add-row">
+            <span class="add-price" id="manis-price">Rp20.000</span>
+            <button class="btn btn-primary" id="manis-add">Tambah ke Pesanan</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- MARTABAK TELOR -->
+      <article class="product row g-4 align-items-center mx-0" data-cat="telor">
+        <div class="col-md-5 photo-frame pimg" style="min-height:210px;" aria-hidden="true">
+          <img class="float-img" id="telorPhoto" src="images/martabak-telor.png" alt="">
+        </div>
+        <div class="product-info col-md-7">
+          <h3>Martabak Telor</h3>
+          <p class="desc">Gurih, berlapis, dan bisa disesuaikan level pedas sambalnya.</p>
+
+          <span class="field-label">Ukuran</span>
+          <div class="opt-row" data-group="telor-ukuran">
+            <button class="opt selected" data-value="Original" data-price="22000">Original · Rp22.000</button>
+            <button class="opt" data-value="Jumbo" data-price="30000">Jumbo · Rp30.000</button>
+          </div>
+
+          <span class="field-label">Isian Telor</span>
+          <div class="opt-row" data-group="telor-isian">
+            <button class="opt selected" data-value="Telor Ayam" data-price="0">Telor Ayam</button>
+            <button class="opt" data-value="Telor Bebek" data-price="3000">Telor Bebek (+Rp3.000)</button>
+          </div>
+
+          <span class="field-label">Level Pedas</span>
+          <div class="opt-row" data-group="telor-pedas">
+            <button class="opt selected" data-value="Tidak Pedas" data-price="0">Tidak Pedas</button>
+            <button class="opt" data-value="Sedang" data-price="0">Sedang</button>
+            <button class="opt" data-value="Pedas" data-price="0">Pedas</button>
+            <button class="opt" data-value="Extra Pedas" data-price="0">Extra Pedas</button>
+          </div>
+
+          <span class="field-label">Tambahan (boleh lebih dari satu)</span>
+          <div class="opt-row" data-group="telor-extra" data-multi="true">
+            <button class="opt" data-value="Extra Telor" data-price="4000">Extra Telor (+Rp4.000)</button>
+            <button class="opt" data-value="Extra Daging Ayam" data-price="6000">Extra Daging Ayam (+Rp6.000)</button>
+            <button class="opt" data-value="Extra Daun Bawang" data-price="1000">Extra Daun Bawang (+Rp1.000)</button>
+          </div>
+
+          <div class="qty-row">
+            <span class="field-label" style="margin:0;">Jumlah</span>
+            <button class="qty-btn" data-qty-action="minus" data-target="telor">−</button>
+            <span class="qty-val" id="telor-qty">1</span>
+            <button class="qty-btn" data-qty-action="plus" data-target="telor">+</button>
+          </div>
+
+          <div class="add-row">
+            <span class="add-price" id="telor-price">Rp22.000</span>
+            <button class="btn btn-primary" id="telor-add">Tambah ke Pesanan</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- MARTABAK PREMIUM -->
+      <article class="product row g-4 align-items-center mx-0" data-cat="mini">
+        <div class="col-md-5 photo-frame pimg" style="min-height:210px;" aria-hidden="true">
+          <img class="float-img" id="premiumPhoto" src="images/martabak-premium.png" alt="">
+        </div>
+        <div class="product-info col-md-7">
+          <h3>Martabak Premium</h3>
+          <p class="desc">Satu kotak, banyak rasa — pilih tepat 3 rasa favoritmu untuk dicampur.</p>
+
+          <span class="field-label">Isi Kotak</span>
+          <div class="opt-row" data-group="mini-ukuran">
+            <button class="opt selected" data-value="Isi 10" data-price="25000">Isi 10 · Rp25.000</button>
+            <button class="opt" data-value="Isi 20" data-price="45000">Isi 20 · Rp45.000</button>
+          </div>
+
+          <span class="field-label">Pilih 3 Rasa</span>
+          <div class="opt-row" data-group="mini-rasa" data-multi="true" data-max="3">
+            <button class="opt" data-value="Coklat" data-price="0">Coklat</button>
+            <button class="opt" data-value="Keju" data-price="0">Keju</button>
+            <button class="opt" data-value="Kacang" data-price="0">Kacang</button>
+            <button class="opt" data-value="Strawberry" data-price="0">Strawberry</button>
+            <button class="opt" data-value="Green Tea" data-price="0">Green Tea</button>
+            <button class="opt" data-value="Tiramisu" data-price="0">Tiramisu</button>
+          </div>
+          <p class="hint" id="mini-hint">Pilih 3 rasa untuk melanjutkan.</p>
+
+          <div class="qty-row">
+            <span class="field-label" style="margin:0;">Jumlah</span>
+            <button class="qty-btn" data-qty-action="minus" data-target="mini">−</button>
+            <span class="qty-val" id="mini-qty">1</span>
+            <button class="qty-btn" data-qty-action="plus" data-target="mini">+</button>
+          </div>
+
+          <div class="add-row">
+            <span class="add-price" id="mini-price">Rp25.000</span>
+            <button class="btn btn-primary" id="mini-add">Tambah ke Pesanan</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="galeri" class="pt-0">
+  <div class="container">
+    <div class="sect-head"><h2>Favorit Pelanggan</h2><p>Geser untuk lihat martabak andalan kami.</p></div>
+    <div id="galCarousel" class="carousel slide gal" data-bs-ride="carousel" data-bs-interval="4500">
+      <div class="carousel-inner">
+        <div class="carousel-item active"><div class="row align-items-center g-3 mx-0">
+          <div class="col-md-6 text-center"><img class="float-img gal-img" data-from="manisPhoto" src="images/martabak-manis.png" alt="Martabak Manis"></div>
+          <div class="col-md-6 text-center text-md-start"><h3>Martabak Manis</h3><p class="desc mx-auto mx-md-0">Tebal, empuk, dengan topping melimpah. Cocok buat teman ngobrol malam.</p><button class="btn btn-primary gal-go mt-3" data-cat="manis">Pesan Manis</button></div>
+        </div></div><div class="carousel-item"><div class="row align-items-center g-3 mx-0">
+          <div class="col-md-6 text-center"><img class="float-img gal-img" data-from="telorPhoto" src="images/martabak-telor.png" alt="Martabak Telor"></div>
+          <div class="col-md-6 text-center text-md-start"><h3>Martabak Telor</h3><p class="desc mx-auto mx-md-0">Gurih berlapis, dengan sambal sesuai level pedas yang kamu mau.</p><button class="btn btn-primary gal-go mt-3" data-cat="telor">Pesan Telor</button></div>
+        </div></div><div class="carousel-item"><div class="row align-items-center g-3 mx-0">
+          <div class="col-md-6 text-center"><img class="float-img gal-img" data-from="premiumPhoto" src="images/martabak-premium.png" alt="Martabak Premium"></div>
+          <div class="col-md-6 text-center text-md-start"><h3>Martabak Premium</h3><p class="desc mx-auto mx-md-0">Satu kotak, tiga rasa pilihanmu. Praktis untuk dibagi-bagi.</p><button class="btn btn-primary gal-go mt-3" data-cat="mini">Pesan Premium</button></div>
+        </div></div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#galCarousel" data-bs-slide="prev" aria-label="Sebelumnya">‹</button>
+      <button class="carousel-control-next" type="button" data-bs-target="#galCarousel" data-bs-slide="next" aria-label="Berikutnya">›</button>
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#galCarousel" data-bs-slide-to="0" class="active" aria-label="Manis"></button>
+        <button type="button" data-bs-target="#galCarousel" data-bs-slide-to="1" aria-label="Telor"></button>
+        <button type="button" data-bs-target="#galCarousel" data-bs-slide-to="2" aria-label="Premium"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kenapa">
+  <div class="wrap">
+    <div class="sect-head">
+      <h2>Kenapa Martabak MM</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="glyph">🧈</div>
+        <h3>Bahan Pilihan</h3>
+        <p>Mentega, coklat, dan keju yang kami pakai sendiri untuk keluarga.</p>
+      </div>
+      <div class="why-item">
+        <div class="glyph">🔥</div>
+        <h3>Selalu Dibuat Baru</h3>
+        <p>Digoreng dan dipanggang setelah pesanan masuk, bukan dari stok.</p>
+      </div>
+      <div class="why-item">
+        <div class="glyph">🧼</div>
+        <h3>Dapur Higienis</h3>
+        <p>Proses masak bersih dan diperiksa rutin oleh pemilik langsung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lokasi" class="pt-0">
+  <div class="container">
+    <div class="sect-head"><h2>Lokasi Kami</h2><p>Mampir langsung ke dapur kami.</p></div>
+    <div class="loc-card loc-wide row g-0 mx-auto">
+      <div class="col-md-4 loc-side">
+        <svg width="52" height="68" viewBox="0 0 56 72" aria-hidden="true"><path d="M28 70C28 70 4 44 4 26a24 24 0 0 1 48 0c0 18-24 44-24 44z" fill="currentColor"/><circle cx="28" cy="26" r="10" fill="#7A2420"/></svg>
+        <strong>Sarijadi, Bandung</strong>
+      </div>
+      <div class="col-md-8 loc-body">
+        <h3>Martabak MM - Sarijadi</h3>
+        <p class="desc">Jl. Sariwangi Jl. Komp. Perumnas Sarijadi No.19 Blok 23, Sukawarna, Kec. Sukajadi, Kota Bandung, Jawa Barat 40599</p>
+        <p class="desc mt-2">Kami berada di kawasan Perumnas Sarijadi. Kamu bisa ambil pesanan langsung di tempat atau minta diantar. Buka setiap hari pukul 16.00 – 22.00.</p>
+        <a class="btn btn-primary mt-3" target="_blank" rel="noopener" href="https://maps.app.goo.gl/h1tzCJvgAGcUasFW7">Lihat Lebih Lanjut</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="pt-0">
+  <div class="container" style="max-width:860px;">
+    <div class="sect-head"><h2>Pertanyaan yang Sering Ditanya</h2><p>Jawaban singkat sebelum kamu memesan.</p></div>
+    <div class="accordion" id="faqList">
+      <div class="accordion-item">
+        <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq0" aria-expanded="true" aria-controls="faq0">Bisa pesan lewat mana saja?</button></h3>
+        <div id="faq0" class="accordion-collapse collapse show" data-bs-parent="#faqList"><div class="accordion-body">Kamu bisa pesan lewat website ini (pilih menu, masukkan ke keranjang, lalu tekan "Buat Pesanan"), datang langsung ke toko, atau lewat aplikasi pesan-antar seperti ShopeeFood, GoFood, dan GrabFood.<div class="chan mt-2"><span>Website</span><span>Datang Langsung</span><span>ShopeeFood</span><span>GoFood</span><span>GrabFood</span></div></div></div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">Jam berapa toko buka?</button></h3>
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqList"><div class="accordion-body">Kami buka setiap hari pukul 16.00 – 22.00.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">Apakah martabaknya dibuat setelah dipesan?</button></h3>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqList"><div class="accordion-body">Ya. Martabak digoreng dan dipanggang setelah pesanan masuk, bukan dari stok.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Bisa ambil sendiri atau diantar?</button></h3>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqList"><div class="accordion-body">Bisa dua-duanya. Saat mengisi data pemesan di keranjang, pilih "Ambil di Tempat" atau "Diantar". Kalau memilih diantar, isi alamat pengantarannya.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">Pembayarannya bagaimana?</button></h3>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqList"><div class="accordion-body">Pembayaran bisa dengan tunai atau QRIS. Pilih salah satunya di formulir pemesan.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">Bisa request topping atau rasa?</button></h3>
+        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqList"><div class="accordion-body">Bisa. Martabak Manis punya pilihan ukuran, topping, dan tambahan. Martabak Telor bisa diatur jenis telur, level pedas, dan tambahannya. Martabak Premium memakai tepat tiga rasa pilihanmu.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">Di mana lokasi tokonya?</button></h3>
+        <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqList"><div class="accordion-body">Kami ada di Jl. Sariwangi Jl. Komp. Perumnas Sarijadi No.19 Blok 23, Sukajadi, Kota Bandung. Buka bagian Lokasi lalu tekan "Lihat Lebih Lanjut" untuk petunjuk arah di Google Maps.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="kontak">
+  <div class="wrap foot-grid">
+    <div>
+      <strong>Jam Buka</strong>
+      Setiap hari, 16.00 – 22.00
+    </div>
+    <div>
+      <strong>Sosial Media</strong>
+      @MartabakMM
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:18px;">
+    <strong style="color:var(--maroon);font-family:'Fraunces',serif;font-size:18px;display:block;margin-bottom:6px;">Martabak MM</strong>
+    <span style="color:var(--ink-soft);font-size:14.5px;">Jl. Sariwangi Jl. Komp. Perumnas Sarijadi No.19 Blok 23, Sukawarna, Kec. Sukajadi, Kota Bandung, Jawa Barat 40599</span>
+  </div>
+</footer>
+
+<div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index:80"><div id="addToast" class="toast mm-toast border-0" role="status" data-bs-delay="1600"><div class="toast-body">Ditambahkan ke pesanan</div></div></div>
+<!-- CART DRAWER -->
+<div class="overlay-bg" id="cartOverlay">
+  <div class="drawer">
+    <div class="drawer-head">
+      <h2>Pesananmu</h2>
+      <button class="icon-btn" id="closeCart" aria-label="Tutup keranjang">✕</button>
+    </div>
+    <div id="cartLines"><div class="cart-empty">Keranjang masih kosong.</div></div>
+    <form id="checkoutForm" class="checkout-inline">
+      <h3 class="ci-title">Data Pemesan</h3>
+      <div class="form-group">
+        <label for="custName">Nama Pemesan</label>
+        <input type="text" id="custName" required placeholder="Nama kamu">
+      </div>
+      <div class="form-group">
+        <label>Metode Pengambilan</label>
+        <div class="radio-row">
+          <label class="radio-opt"><input type="radio" name="pickup" value="Ambil di Tempat" checked> Ambil di Tempat</label>
+          <label class="radio-opt"><input type="radio" name="pickup" value="Diantar"> Diantar</label>
+        </div>
+      </div>
+      <div class="form-group" id="addressGroup" style="display:none;">
+        <label for="custAddress">Alamat Pengantaran</label>
+        <input type="text" id="custAddress" placeholder="Alamat lengkap">
+      </div>
+      <div class="form-group">
+        <label>Metode Pembayaran</label>
+        <div class="radio-row">
+          <label class="radio-opt"><input type="radio" name="payment" value="Tunai" checked> Tunai</label>
+          <label class="radio-opt"><input type="radio" name="payment" value="QRIS"> QRIS</label>
+        </div>
+      </div>
+      <div class="cart-summary">
+        <div class="sum-row total"><span>Total</span><span id="cartTotal">Rp0</span></div>
+        <button type="submit" class="btn btn-primary" id="checkoutBtn" style="width:100%;margin-top:10px;" disabled>Buat Pesanan</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- RECEIPT MODAL -->
+<div class="overlay-bg center" id="receiptOverlay">
+  <div class="receipt" id="receiptBox"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>
